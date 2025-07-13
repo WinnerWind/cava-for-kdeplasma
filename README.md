@@ -2,6 +2,11 @@
 
 <img width="682" height="79" alt="image" src="https://github.com/user-attachments/assets/aaff6fe7-8cb0-4114-9650-6b5a327b9d4d" />
 
+## Dependencies
+- `cava`
+- `python`
+- `bash`
+
 ## Installation
 1. Download this repository:
   - Clone it using `git clone https://github.com/WinnerWind/cava-for-kdeplasma/`
@@ -60,6 +65,14 @@ You can get rid of all colours if you so desire, by commenting out these lines
     #     if color
     # )
 ```
+
+### Adding Spaces to Output
+Replace the command used by Command Runner with (You need `perl`)
+```sh
+tail -n 1 /dev/shm/cava_output.txt | perl -CS -pe 's/(\e\[[0-9;]*m)|(.)/defined $1 ? $1 : "$2 "/ge; s/ $//'
+```
+
+Replace the path after the tail command with the file you want.
 
 ### Custom Colours
 You can define 3-length or 6-length colors in the `EXTRA_COLORS` variable in `~/.local/bin/panel_cava.sh`. Make sure the colours are comma seperated!
