@@ -62,6 +62,14 @@ You can get rid of all colours if you so desire, by commenting out these lines
     # )
 ```
 
+### Custom Colours
+You can add custom colours by adding the `-e` argument to any line of your choosing in `~/.local/bin/panel_cava.sh`.
+```sh
+panel_cava.py -f 60 -b 5 -c left -e fffdfc,fffafe,ffeafa,ffc3d2 > /dev/shm/cava_output_left.txt &
+# You can use 3 var hex codes like ffa as well!
+```
+*NOTE : These colours are converted to ANSI and are hence limited by the amount of colours available in ANSI* 
+
 ## Credits
 - `cava` by [karlstav](https://github.com/karlstav/cava)
 - Cava panel script from [milk-hyprland-rice](https://github.com/WinnerWind/milk-hyprland-rice/blob/main/Waybar/scripts/cava.py) which is from [polybar-info-cava](https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/info-cava) (Wow! A fork chain!)
