@@ -20,6 +20,8 @@
 10. Enable `Wait for Completion` (Required for it to work)
 
 ## Configuration
+Remember to run `systemctl restart panel-cava --user` when you change configuration!
+
 ### Frame rate and Bar Count
 By default, cava will run at 60 frames per second and generate 5 bars. In case you want to change this behavior, edit `~/.local/bin/panel_cava.sh` and change the lines:
 ```sh
@@ -38,6 +40,24 @@ You can edit the colours in the dictionary `ansi_colors` in `~/.local/bin/panel_
         'fbb': '\033[38;5;218m',  # lighter pink
         'faa': '\033[38;5;219m',  # even lighter pink
         }
+```
+
+### Disabling Colours
+You can get rid of all colours if you so desire, by commenting out these lines
+```py
+    ramp_list.extend(
+        f'{ansi_colors.get(color.strip(" #"), "")}█{reset}'
+        for color in sys.argv[2].split(',')
+        if color
+    )
+```
+... replacing it with
+```py
+    # ramp_list.extend(
+    #     f'{ansi_colors.get(color.strip(" #"), "")}█{reset}'
+    #     for color in sys.argv[2].split(',')
+    #     if color
+    # )
 ```
 
 Replacing `60` with your desired frame rate and `5` with your desired number of bars.
