@@ -30,6 +30,8 @@ panel_cava.py -f 60 -b 5 -c right > /dev/shm/cava_output_right.txt &
 panel_cava.py -f 60 -b 5 -c average > /dev/shm/cava_output.txt &
 ```
 
+Replacing `60` with your desired frame rate and `5` with your desired number of bars.
+
 ### Colours
 You can edit the colours in the dictionary `ansi_colors` in `~/.local/bin/panel_cava.py` with your desired colours.
 ```py
@@ -59,8 +61,6 @@ You can get rid of all colours if you so desire, by commenting out these lines
     #     if color
     # )
 ```
-
-Replacing `60` with your desired frame rate and `5` with your desired number of bars.
 
 ## Credits
 - `cava` by [karlstav](https://github.com/karlstav/cava)
