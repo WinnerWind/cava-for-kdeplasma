@@ -8,11 +8,21 @@ import tempfile
 
 if len(sys.argv) > 1 and sys.argv[1] == '--subproc':
     ramp_list = [' ', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
-#    ramp_list.extend(
-#        f'%{{F#{color.strip(" #")}}}█%{{F-}}'
-#        for color in sys.argv[2].split(',')
-#        if color
-#    )
+
+    ansi_colors = {
+        'fdd': '\033[38;5;210m',  # light pink
+        'fcc': '\033[38;5;217m',  # pink
+        'fbb': '\033[38;5;218m',  # lighter pink
+        'faa': '\033[38;5;219m',  # even lighter pink
+        }
+
+    reset = '\033[0m'
+
+    ramp_list.extend(
+        f'{ansi_colors.get(color.strip(" #"), "")}█{reset}'
+        for color in sys.argv[2].split(',')
+        if color
+    )
     while True:
         cava_input = input().strip().split()
         cava_input = [int(i) for i in cava_input]
