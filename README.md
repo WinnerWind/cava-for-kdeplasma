@@ -25,9 +25,8 @@ Remember to run `systemctl restart panel-cava --user` when you change configurat
 ### Frame rate and Bar Count
 By default, cava will run at 60 frames per second and generate 5 bars. In case you want to change this behavior, edit `~/.local/bin/panel_cava.sh` and change the lines:
 ```sh
-panel_cava.py -f 60 -b 5 -c left > /dev/shm/cava_output_left.txt & 
-panel_cava.py -f 60 -b 5 -c right > /dev/shm/cava_output_right.txt & 
-panel_cava.py -f 60 -b 5 -c average > /dev/shm/cava_output.txt &
+FRAMERATE=60
+BARS=5
 ```
 
 Replacing `60` with your desired frame rate and `5` with your desired number of bars.
@@ -63,11 +62,7 @@ You can get rid of all colours if you so desire, by commenting out these lines
 ```
 
 ### Custom Colours
-You can add custom colours by adding the `-e` argument to any line of your choosing in `~/.local/bin/panel_cava.sh`.
-```sh
-panel_cava.py -f 60 -b 5 -c left -e fffdfc,fffafe,ffeafa,ffc3d2 > /dev/shm/cava_output_left.txt &
-# You can use 3 var hex codes like ffa as well!
-```
+You can define 3-length or 6-length colors in the `EXTRA_COLORS` variable in `~/.local/bin/panel_cava.sh`. Make sure the colours are comma seperated!
 *NOTE : These colours are converted to ANSI and are hence limited by the amount of colours available in ANSI* 
 
 ## Credits
