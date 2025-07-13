@@ -7,7 +7,7 @@
   - Clone it using `git clone https://github.com/WinnerWind/cava-for-kdeplasma/`
   - Download it by clicking `< > Code` and downloading as ZIP.
 2. Move `panel_cava.py` and `panel_cava.sh` to `~/.local/bin/`, keeping file names intact.
-3. Move `panel_cava.service` to `~/.config/systemd/user/panel_cava.service`
+3. Move `panel-cava.service` to `~/.config/systemd/user/panel-cava.service`
 4. Run `systemctl daemon-reload --user`
 5. Start the service using `systemctl enable --now panel-cava.service --user`
 6. Install the [command output widget](https://store.kde.org/p/2136636/)
