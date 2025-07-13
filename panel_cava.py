@@ -41,13 +41,6 @@ def hex_to_ansi256(hex_color):
 if len(sys.argv) > 1 and sys.argv[1] == '--subproc':
     ramp_list = [' ', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
 
-    ansi_colors = {
-        'fdd': '\033[38;5;210m',  # light pink
-        'fcc': '\033[38;5;217m',  # pink
-        'fbb': '\033[38;5;218m',  # lighter pink
-        'faa': '\033[38;5;219m',  # even lighter pink
-        }
-
     reset = '\033[0m'
 
     ramp_list.extend(
