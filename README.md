@@ -1,5 +1,7 @@
 # Cava for KDE Panel
 
+<img width="682" height="79" alt="image" src="https://github.com/user-attachments/assets/aaff6fe7-8cb0-4114-9650-6b5a327b9d4d" />
+
 ## Installation
 1. Download this repository:
   - Clone it using `git clone https://github.com/WinnerWind/cava-for-kdeplasma/`
