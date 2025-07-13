@@ -20,11 +20,24 @@
 10. Enable `Wait for Completion` (Required for it to work)
 
 ## Configuration
+### Frame rate and Bar Count
 By default, cava will run at 60 frames per second and generate 5 bars. In case you want to change this behavior, edit `~/.local/bin/panel_cava.sh` and change the lines:
-```
+```sh
 panel_cava.py -f 60 -b 5 -c left > /dev/shm/cava_output_left.txt & 
 panel_cava.py -f 60 -b 5 -c right > /dev/shm/cava_output_right.txt & 
 panel_cava.py -f 60 -b 5 -c average > /dev/shm/cava_output.txt &
+```
+
+### Colours
+You can edit the colours in the dictionary `ansi_colors` in `~/.local/bin/panel_cava.py` with your desired colours.
+```py
+# Edit these!
+    ansi_colors = {
+        'fdd': '\033[38;5;210m',  # light pink
+        'fcc': '\033[38;5;217m',  # pink
+        'fbb': '\033[38;5;218m',  # lighter pink
+        'faa': '\033[38;5;219m',  # even lighter pink
+        }
 ```
 
 Replacing `60` with your desired frame rate and `5` with your desired number of bars.
