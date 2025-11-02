@@ -1,4 +1,4 @@
-#!/bin/env python3
+2#!/bin/env python3
 import argparse
 import os
 import signal
@@ -84,6 +84,8 @@ conf_ascii_max_range = 12 + len([i for i in opts.extra_colors.split(',') if i])
 cava_conf = tempfile.mkstemp('','polybar-cava-conf.')[1]
 with open(cava_conf, 'w') as cava_conf_file:
     cava_conf_file.write(
+        '[input]\n'
+        'virtual=1\n'
         '[general]\n'
        f'framerate={opts.framerate}\n'
        f'bars={opts.bars}\n'
